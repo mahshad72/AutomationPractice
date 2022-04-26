@@ -1,21 +1,13 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.keys import Keys
 from time import sleep
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-
-# setup ==> mohito amade mkne - ghabl az test 1 bar ejra mishe
-# teardown ==> mohito paksazi mkne - bad az test 1 bar ejra mishe
-
-# **************Browser Action 1 => open , back, fw, refresh **************************
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 driver.get("http://google.com")
-#
+
 # driver.maximize_window()
 #
 # window_title = driver.title  # moshahede title safhe
@@ -60,9 +52,9 @@ driver.get("http://google.com")
 #
 # # **************Browser Action 3 => Change Window position **************************
 #
-# current_position = driver.get_window_position() #{'x': 10, 'y': 10}
+# current_position = driver.get_window_position()  # {'x': 10, 'y': 10}
 #
-# driver.set_window_position(100,200)
+# driver.set_window_position(100, 200)
 # assert driver.get_window_position()['x'] == 100
 #
 # # **************Browser Action 3 => Change Window status **************************
@@ -72,6 +64,6 @@ driver.get("http://google.com")
 # sleep(1)
 # driver.fullscreen_window()
 # sleep(1)
-# ******************************************
+# # ******************************************
 
 driver.quit()

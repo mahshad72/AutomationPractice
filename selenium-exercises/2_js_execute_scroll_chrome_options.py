@@ -21,10 +21,10 @@ driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 sleep(1)
 
 current_path = Path(
-    __file__).parent  # چون نوشتیم parent میاد آدرس فولدر automationpractice رو میده. اگه نمینوشتیم تا js_test.py میومد جلو
+    __file__).parent  # چون نوشتیم parent میاد آدرس فولدر automationpractice رو میده. اگه نمینوشتیم تاخود فایل 2js_test.py میومد جلو
 
 print(type(current_path))
-file_name = os.path.join(str(current_path), 'scrollSS.png')
+file_name = os.path.join(str(current_path), '2_scroll_ss.png')
 print(type(file_name))
 print(current_path)
 driver.save_screenshot(file_name)
