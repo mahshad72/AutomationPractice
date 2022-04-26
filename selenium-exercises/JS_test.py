@@ -4,7 +4,7 @@ from time import sleep
 import os  # برای کارکردن و عملیات مرتبط با سیستم عامل هست
 from pathlib import \
     Path  # میاد برای ما آدرسی که میخوایمو میسازه و از طریق os میاد اسمی که میخوایمو جوین میکنه به path ما
-
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()  # اینجا قبل از اینکه درایور رو تعریف کنیم باید مشخص کنیم اینستنس درایور با چه آپشن هایی باید از کلاس درایور ساخته بشه
@@ -12,9 +12,8 @@ chrome_options.add_argument("--incognito")  # https://peter.sh/experiments/chrom
 # یه آپشنن دیگه هم پاریم  که بهش میگن هدلس. یعنی کروم به صورت ویژوال برای ما باز نمیشه. برای جاهایی که مثلا رم کمی داریم خیلی به درد میخوره. در این حالت کروم در بک گروند پروسسش انجام میشه
 chrome_options.add_argument("--headless")  # https://peter.sh/experiments/chromium-command-line-switches/
 
-# driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),
-                          chrome_options=chrome_options)  # with chrome options
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
+                          options=chrome_options)
 
 driver.get("http://digikala.com")
 sleep(1)
