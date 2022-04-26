@@ -66,7 +66,7 @@ current_position = driver.get_window_position()  # {'x': 10, 'y': 10}
 driver.set_window_position(100, 200)
 assert driver.get_window_position()['x'] == 100
 
-# **************Browser Action 3 => Change Window status **************************
+# **************Browser Action 4 => Change Window status **************************
 driver.maximize_window()
 sleep(1)
 driver.fullscreen_window()
